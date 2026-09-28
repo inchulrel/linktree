@@ -20,16 +20,16 @@ export default function ProfileImage({ src, alt }: { src: string; alt: string })
         type="button"
         onClick={() => setOpen(true)}
         aria-label="프로필 사진 크게 보기"
-        className="cursor-zoom-in rounded-full transition duration-300 hover:scale-110 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-500"
+        className="cursor-zoom-in rounded-full p-1 bg-white/70 shadow-[0_14px_32px_-10px_rgba(160,95,55,0.45),0_2px_6px_rgba(160,95,55,0.12)] transition duration-300 ease-out hover:scale-[1.03] hover:shadow-[0_18px_40px_-10px_rgba(160,95,55,0.5),0_2px_6px_rgba(160,95,55,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-300"
       >
         <Image
           src={src}
           alt={alt}
-          width={192}
-          height={192}
+          width={144}
+          height={144}
           priority
           unoptimized={src.endsWith(".svg")}
-          className="h-44 w-44 rounded-full object-cover ring-4 ring-white shadow-md sm:h-48 sm:w-48"
+          className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36"
         />
       </button>
 
@@ -39,7 +39,7 @@ export default function ProfileImage({ src, alt }: { src: string; alt: string })
           aria-modal="true"
           aria-label={alt}
           onClick={() => setOpen(false)}
-          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/70 p-4"
+          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-stone-900/60 p-6 backdrop-blur-sm"
         >
           <Image
             src={src}
@@ -47,7 +47,7 @@ export default function ProfileImage({ src, alt }: { src: string; alt: string })
             width={640}
             height={640}
             unoptimized={src.endsWith(".svg")}
-            className="h-auto w-full max-w-md rounded-2xl shadow-2xl"
+            className="h-auto w-full max-w-md rounded-3xl shadow-2xl"
           />
         </div>
       )}
