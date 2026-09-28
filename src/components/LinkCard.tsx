@@ -17,12 +17,12 @@ export default function LinkCard({
   onClick,
 }: {
   link: LinkItem;
-  count?: number;
-  onClick?: () => void;
+  count: number;
+  onClick: () => void;
 }) {
   const handleClick = () => {
     trackClick(link.id);
-    onClick?.();
+    onClick();
   };
 
   return (
@@ -46,11 +46,9 @@ export default function LinkCard({
         />
       )}
       <span className="relative">{link.title}</span>
-      {count !== undefined && (
-        <span className="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-medium tabular-nums text-muted">
-          {count.toLocaleString("ko-KR")}회
-        </span>
-      )}
+      <span className="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-medium tabular-nums text-muted">
+        {count.toLocaleString("ko-KR")}회
+      </span>
     </a>
   );
 }

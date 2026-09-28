@@ -28,7 +28,6 @@ export default function ProfileImage({ src, alt }: { src: string; alt: string })
           width={144}
           height={144}
           priority
-          unoptimized={src.endsWith(".svg")}
           className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36"
         />
       </button>
@@ -46,7 +45,6 @@ export default function ProfileImage({ src, alt }: { src: string; alt: string })
             alt={alt}
             width={640}
             height={640}
-            unoptimized={src.endsWith(".svg")}
             className="h-auto w-full max-w-md rounded-3xl shadow-2xl"
           />
         </div>
