@@ -36,5 +36,5 @@ export async function GET() {
     links.map((l) => [l.id, docs.find((d) => d._id === l.id)?.count ?? 0]),
   );
 
-  return Response.json({ counts });
+  return Response.json({ counts }, { headers: { "Cache-Control": "no-store" } });
 }
